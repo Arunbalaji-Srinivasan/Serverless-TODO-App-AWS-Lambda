@@ -36,7 +36,7 @@ export const handler: APIGatewayProxyHandler = async (event: APIGatewayProxyEven
                                             name: newTodo.name,
                                             dueDate: newTodo.dueDate,
                                             done: false,
-                                            attachmentUrl: `https://${thumbnailBucketName}.s3.amazonaws.com/${todoId}.jpg`,
+                                            attachmentUrl: ``,
                                       })
   logger.info('New Item', newTodoItems) 
                            

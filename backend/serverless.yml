@@ -302,6 +302,7 @@ resources:
               Action: 
                 - "s3:GetObject"
                 - "s3:PutObject"
+                - "s3:PutObjectAcl"
                 - "s3:DeleteObject"
               Resource: 'arn:aws:s3:::${self:provider.environment.TODOS_S3_BUCKET}/*'
         Bucket: !Ref S3BucketTodos 
@@ -326,12 +327,13 @@ resources:
           Id: MyPolicy
           Version: "2012-10-17"
           Statement:
-            - Sid: PublicReadForGetResizePhotosBucketObjects
+            - Sid: PublicReadGetObject
               Effect: Allow
               Principal: '*'
               Action: 
                 - "s3:GetObject"
                 - "s3:PutObject"
+                - "s3:PutObjectAcl"
               Resource: "arn:aws:s3:::${self:provider.environment.THUMBNAILS_S3_BUCKET}/*"
         Bucket: !Ref S3BucketThumbnail         
         
